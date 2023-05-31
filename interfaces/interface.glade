@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="3.0"/>
+  <object class="GtkWindow" id="janela">
+    <property name="title">Agenda de Contatos</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <property name="border-width">10</property>
+    <signal name="destroy" handler="gtk_main_quit" swapped="no"/>
+    <child>
+      <object class="GtkGrid" id="grid">
+        <property name="column-spacing">10</property>
+        <property name="row-spacing">10</property>
+        <child>
+          <object class="GtkMenuBar" id="menubar">
+            <child>
+              <object class="GtkMenuItem" id="menuitem_arquivo">
+                <property name="label">Arquivo</property>
+                <child>
+                  <object class="GtkMenu" id="menu_arquivo">
+                    <child>
+                      <object class="GtkMenuItem" id="menuitem_novo">
+                        <property name="label">Novo</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="menuitem_abrir">
+                        <property name="label">Abrir</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem" id="separator"/>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="menuitem_sair">
+                        <property name="label">Sair</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="labelInicial">
+            <property name="label">Bem-vindo à Agenda de contatos</property>
+            <property name="justify">center</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkFrame" id="frameNome">
+            <property name="label">Nome</property>
+            <property name="border-width">10</property>
+            <child>
+              <object class="GtkBox" id="caixa_vertical_nome">
+                <property name="orientation">vertical</property>
+                <property name="border-width">10</property>
+                <child>
+                  <object class="GtkEntry" id="entradaNome"/>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkFrame" id="frameEmail">
+            <property name="label">Email</property>
+            <property name="border-width">10</property>
+            <child>
+              <object class="GtkBox" id="caixa_vertical_email">
+                <property name="orientation">vertical</property>
+                <property name="border-width">10</property>
+                <child>
+                  <object class="GtkEntry" id="entradaEmail"/>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkFrame" id="frameTelefone">
+            <property name="label">Telefone</property>
+            <property name="border-width">10</property>
+            <child>
+              <object class="GtkBox" id="caixa_vertical_telefone">
+                <property name="orientation">vertical</property>
+                <property name="border-width">10</property>
+                <child>
+                  <object class="GtkEntry" id="entradaTelefone">
+                    <signal name="focus-in-event" handler="aplicarMascaraTelefone" swapped="no"/>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="botaoGravar">
+            <property name="label">Gravar</property>
+            <signal name="clicked" handler="gravarContato" swapped="no"/>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

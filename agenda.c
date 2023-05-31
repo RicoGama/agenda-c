@@ -91,9 +91,12 @@ int main(int argc, char *argv[]) {
     gtk_box_pack_start(GTK_BOX(caixa_vertical_telefone), entradaTelefone, FALSE, FALSE, 0);
     g_signal_connect(entradaTelefone, "focus-in-event", G_CALLBACK(aplicarMascaraTelefone), NULL);
 
+    GtkBuilder *builder = gtk_builder_new();
+    gtk_builder_add_from_file(builder, "/var/www/html/agenda-c/interfaces/interface.glade", NULL);
+
     // Criar o botão "Gravar" (limpar)
     GtkWidget *botaoGravar = gtk_button_new_with_label("Gravar");
-    g_signal_connect(botaoGravar, "clicked", G_CALLBACK(gravarContato), NULL);
+    g_signal_connect(botaoGravar, "clicked", G_CALLBACK(gravarContato), builder);
     gtk_grid_attach(GTK_GRID(grid), botaoGravar, 0, 4, 4, 1);
 
     // Exibir a janela
