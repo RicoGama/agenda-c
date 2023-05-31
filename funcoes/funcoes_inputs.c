@@ -14,7 +14,7 @@ void aplicarMascaraTelefone(GtkWidget *widget, GdkEventKey *event, gpointer user
 
 void gravarContato(GtkWidget *widget, gpointer data) {
     // Obter os valores digitados nos campos de entrada
-    GtkEntry *entradaNome = GTK_ENTRY(user_data);
+    GtkEntry *entradaNome = GTK_ENTRY(gtk_builder_get_object(builder, "entradaNome"));
     GtkEntry *entradaEmail = GTK_ENTRY(gtk_builder_get_object(builder, "entradaEmail")); // Substitua "builder" pelo nome do objeto GtkBuilder usado em seu código
     GtkEntry *entradaTelefone = GTK_ENTRY(gtk_builder_get_object(builder, "entradaTelefone")); // Substitua "builder" pelo nome do objeto GtkBuilder usado em seu código
 
