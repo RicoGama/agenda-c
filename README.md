@@ -7,4 +7,4 @@
 
 # 📁 Acesso ao projeto
 ** Rode o seguinte comando pra compilar: <br/>
-`gcc -o agenda agenda.c funcoes/funcoes_gtk_menu.c funcoes/funcoes_uteis.c funcoes/funcoes_inputs.c `pkg-config --cflags --libs gtk+-3.0` -lgtk-3 -lmysqlclient`
+gcc -o agenda agenda.c funcoes/funcoes_gtk_menu.c funcoes/funcoes_uteis.c funcoes/funcoes_inputs.c `pkg-config --cflags --libs gtk+-3.0` -lgtk-3 -lmysqlclient
