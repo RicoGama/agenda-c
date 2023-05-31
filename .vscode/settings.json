@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "funcoes_inputs.h": "c"
+        "funcoes_inputs.h": "c",
+        "gtk.h": "c"
     }
 }

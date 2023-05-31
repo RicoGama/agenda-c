@@ -9,3 +9,7 @@ void aplicarMascaraTelefone(GtkWidget *widget, GdkEventKey *event, gpointer user
     gtk_entry_set_text(entradaTelefone, mascara);
     g_free(mascara);
 }
+
+void gravarContato(GtkWidget *widget, gpointer data) {
+    
+}

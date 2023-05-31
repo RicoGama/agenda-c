@@ -4,5 +4,6 @@
 #include <gtk/gtk.h>
 
 void aplicarMascaraTelefone(GtkWidget *widget, GdkEventKey *event, gpointer user_data);
+void gravarContato(GtkWidget *widget, gpointer data);
 
 #endif

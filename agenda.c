@@ -89,8 +89,12 @@ int main(int argc, char *argv[]) {
     // Criar a entrada "Telefone"
     GtkWidget *entradaTelefone = gtk_entry_new();
     gtk_box_pack_start(GTK_BOX(caixa_vertical_telefone), entradaTelefone, FALSE, FALSE, 0);
-    g_signal_connect(entradaTelefone, "insert-text", G_CALLBACK(aplicarMascaraTelefone), NULL);
-    g_signal_connect(entradaTelefone, "key-press-event", G_CALLBACK(onKeyPress), NULL);
+    g_signal_connect(entradaTelefone, "focus-in-event", G_CALLBACK(aplicarMascaraTelefone), NULL);
+
+    // Criar o botão "Gravar" (limpar)
+    GtkWidget *botaoGravar = gtk_button_new_with_label("Gravar");
+    g_signal_connect(botaoGravar, "clicked", G_CALLBACK(gravarContato), NULL);
+    gtk_grid_attach(GTK_GRID(grid), botaoGravar, 0, 4, 4, 1);
 
     // Exibir a janela
     gtk_widget_show_all(janela);
