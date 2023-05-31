@@ -1,5 +1,6 @@
 #include <gtk/gtk.h>
 #include <glib.h>
+#include <mysql/mysql.h>
 #include "funcoes_inputs.h"
 #include "funcoes_uteis.h"
 
